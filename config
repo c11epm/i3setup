@@ -30,7 +30,12 @@ bindsym $mod+Shift+Return exec gnome-terminal
 #bindsym $mod+Shift+L exec xlock
 
 #Nautilus
-bindsym $mod+n exec nautilus
+bindsym $mod+n exec nautilus 
+
+#Google Chrome
+bindsym $mod+g exec google-chrome
+#Firefox fast open (browser)
+bindsym $mod+b exec firefox
 
 #Printscreen
 bindsym Print exec xfce4-screenshooter
@@ -152,6 +157,12 @@ mode "resize" {
         bindsym Up resize grow height 10 px or 10 ppt
         bindsym Down resize shrink height 10 px or 10 ppt
         bindsym Right resize grow width 10 px or 10 ppt
+
+        bindsym $mod+Left resize shrink width 1 px or 1 ppt
+        bindsym $mod+Up resize grow height 1 px or 1 ppt
+        bindsym $mod+Down resize shrink height 1 px or 1 ppt
+        bindsym $mod+Right resize grow width 1 px or 1 ppt
+
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
