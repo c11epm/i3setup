@@ -26,11 +26,33 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Shift+Return exec gnome-terminal
 
+#Dell fn-shortcuts to fix the fn-buttons
+#Toggle mute F1
+bindcode 121 exec amixer -D pulse set Master 1+ toggle
+#Lower volume F2
+bindcode 122 exec amixer -D pulse set Master 5%-
+#Increase volume F3
+bindcode 123 exec amixer -D pulse set Master 5%+
+#Toggle build-in microphone F4
+bindcode 198 exec amixer -D pulse set Capture toggle
+#Numlock F5
+#bindcode 77 exec Num_Lock this was not needed, hold FN to toggle the numlock part
+
+#Toggle screen to external screen
+#No clear keycode to bind or something
+
+#search button F9
+bindcode 225 exec google-chrome
+#Higher backlight F11
+bindcode 233 exec xbacklight +10
+#Lower backlight F12
+bindcode 232 exec xbacklight -10
+
 #Lock with xlock
 #bindsym $mod+Shift+L exec xlock
 
 #Nautilus
-bindsym $mod+n exec nautilus 
+bindsym $mod+n exec nautilus --no-desktop 
 
 #Google Chrome
 bindsym $mod+g exec google-chrome
@@ -138,7 +160,8 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+O exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+O exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+O exec i3-msg exit
 
 # exit i3 (logs you out of your X session)
 #bindsym $mod+Shift+O exit
@@ -190,10 +213,11 @@ bar {
 
 }
 
-set $mode_system System (l) lock, (e) logout, (r) reboot, (s) shutdown, (Enter || Esc) back
+set $mode_system System (l) lock, (e) logout, (z) suspend, (r) reboot, (s) shutdown, (Enter || Esc) back
 mode "$mode_system" {
     bindsym l exec /home/emil/.i3/script lock, mode "default"
     bindsym e exec /home/emil/.i3/script logout, mode "default"
+    bindsym z exec sudo /home/emil/.i3/script suspend, mode "default"
     bindsym r exec sudo /home/emil/.i3/script reboot, mode "default"
     bindsym s exec sudo /home/emil/.i3/script shutdown, mode "default"
 
@@ -201,5 +225,5 @@ mode "$mode_system" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+Pause mode "$mode_system"
+bindsym $mod+p mode "$mode_system"
 
