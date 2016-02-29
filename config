@@ -23,6 +23,15 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+#Start settings daemon
+exec unity-settings-daemon
+
+#Start transparency thing
+exec xcompmgr -c -f -n
+
+#Set background image
+exec feh --bg-fill /home/emil/Pictures/background.jpg
+
 # start a terminal
 bindsym $mod+Shift+Return exec gnome-terminal
 
@@ -59,6 +68,8 @@ bindsym $mod+g exec google-chrome
 #Firefox fast open (browser)
 bindsym $mod+b exec firefox
 
+#Unity-control-center
+bindsym $mod+c exec unity-control-center
 #Printscreen
 bindsym Print exec xfce4-screenshooter
 # kill focused window
@@ -120,16 +131,16 @@ set $w8 "8: Stuff"
 set $w9 "9: Mail"
 set $w0 "10: Garbage"
 
-workspace $w1 output DVI-D-0
-workspace $w2 output DVI-D-0
-workspace $w3 output DVI-D-0
-workspace $w4 output DVI-D-0
-workspace $w5 output DVI-D-0
-workspace $w6 output DVI-I-0
-workspace $w7 output DVI-I-0
-workspace $w8 output DVI-I-0
-workspace $w9 output DVI-I-0
-workspace $w0 output DVI-I-0
+workspace $w1 output eDP1
+workspace $w2 output eDP1 
+workspace $w3 output eDP1
+workspace $w4 output eDP1
+workspace $w5 output eDP1
+workspace $w6 output HDMI1
+workspace $w7 output HDMI1
+workspace $w8 output HDMI1
+workspace $w9 output HDMI1
+workspace $w0 output HDMI1
 
 # switch to workspace
 bindsym $mod+1 workspace $w1 

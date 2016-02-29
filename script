@@ -17,7 +17,7 @@ case "$1" in
         sudo shutdown -Ph now
         ;;
     *)
-        echo "Usage: $0 {lock|logout|reboot|shutdown}"
+        echo "Usage: $0 {lock|logout|sustend|reboot|shutdown}"
         exit 2
 esac
 
