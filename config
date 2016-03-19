@@ -23,6 +23,17 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+#Start settings daemon
+exec unity-settings-daemon
+
+#Start transparency thing
+exec xcompmgr -c -f -n
+
+#Set background image
+exec feh --bg-fill /home/emil/Pictures/background.jpg
+
+
+
 #Keypress events
 #Toggle mute F1
 bindcode 121 exec amixer -D pulse set Master 1+ toggle
@@ -31,6 +42,13 @@ bindcode 122 exec amixer -D pulse set Master 5%-
 #Increase volume F3
 bindcode 123 exec amixer -D pulse set Master 5%+
 #Pause music and stuff
+
+#Spotift pause
+bindcode 172 exec pytify -pp
+#Spotify next
+bindcode 171 exec pytify -n
+#Spotify prev
+bindcode 173 exec pytify -p
 
 
 # start a terminal
