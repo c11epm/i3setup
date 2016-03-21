@@ -62,6 +62,8 @@ bindcode 232 exec xbacklight -10
 
 #Nautilus
 bindsym $mod+n exec nautilus --no-desktop 
+#Gnome-system-monitor
+bindsym $mod+m exec gnome-system-monitor
 
 #Google Chrome
 bindsym $mod+g exec google-chrome
@@ -237,4 +239,21 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 bindsym $mod+p mode "$mode_system"
+
+set $mode_spotify Spotify (n) next, (p) previous, (s) pause/play, (Enter || Esc) back
+mode "$mode_spotify" {
+    bindsym n exec pytify -n
+    bindsym p exec pytify -p
+    bindsym s exec pytify -pp
+    
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+t mode "$mode_spotify"
+
+
+#Set mouse properties
+exec xinput --set-prop 11 269 1
+exec xinput --set-prop 11 266 0
 
