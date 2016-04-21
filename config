@@ -60,6 +60,9 @@ bindcode 232 exec xbacklight -10
 #Lock with xlock
 #bindsym $mod+Shift+L exec xlock
 
+#Setup mouse
+bindsym $mod+l exec sh $HOME/.setupmouse.sh
+
 #Nautilus
 bindsym $mod+n exec nautilus --no-desktop 
 #Gnome-system-monitor
@@ -254,6 +257,6 @@ bindsym $mod+t mode "$mode_spotify"
 
 
 #Set mouse properties
-exec xinput --set-prop 11 269 1
-exec xinput --set-prop 11 266 0
-
+#exec xinput --set-prop 11 269 1
+#exec xinput --set-prop 11 266 -1
+exec --no-startup-id sh $HOME/.setupmouse.sh
