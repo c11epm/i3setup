@@ -37,13 +37,20 @@ bindsym $mod+Shift+Return exec gnome-terminal
 
 #Dell fn-shortcuts to fix the fn-buttons
 #Toggle mute F1
-bindcode 121 exec amixer -D pulse set Master 1+ toggle
+#bindcode 121 exec amixer -D pulse set Master 1+ toggle
+bindcode 121 exec amixer -c 1 set Master toggle && amixer -c 1 set Speaker unmute
 #Lower volume F2
-bindcode 122 exec amixer -D pulse set Master 5%-
+bindcode 122 exec amixer -c 1 set Master 5%-
 #Increase volume F3
-bindcode 123 exec amixer -D pulse set Master 5%+
+bindcode 123 exec amixer -c 1 set Master 5%+
 #Toggle build-in microphone F4
-bindcode 198 exec amixer -D pulse set Capture toggle
+bindcode 198 exec amixer -c 1 set Capture toggle
+
+#Got problem with the Dell not recognizing when audio jack is connected. 
+#Needed to add this lines to manualy set the output sound...
+bindsym $mod+z exec amixer -c 1 set Speaker 100
+bindsym $mod+Shift+Z exec amixer -c 1 set Speaker 0
+
 #Numlock F5
 #bindcode 77 exec Num_Lock this was not needed, hold FN to toggle the numlock part
 
