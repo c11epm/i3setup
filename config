@@ -24,7 +24,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 floating_modifier $mod
 
 #Start settings daemon
-exec unity-settings-daemon
+exec gnome-settings-daemon
 
 #Start transparency thing
 exec xcompmgr -c -f -n
@@ -81,7 +81,7 @@ bindsym $mod+m exec gnome-system-monitor
 #bindsym $mod+b exec firefox
 
 #Unity-control-center
-bindsym $mod+c exec unity-control-center
+bindsym $mod+c exec gnome-control-center
 #Printscreen
 bindsym Print exec xfce4-screenshooter
 # kill focused window
@@ -264,7 +264,7 @@ bindsym $mod+t mode "$mode_spotify"
 
 set $mode_program Program (g) Google Chrome, (m) Spotify, (r) TeXmaker, (s) Skype, (t) Thunderbird, (Enter || Esc) back
 mode "$mode_program" {
-    bindsym g exec google-chrome
+    bindsym g exec chromium-browser
     bindsym m exec spotify
     bindsym r exec texmaker
     bindsym s exec skype
@@ -280,4 +280,4 @@ bindsym $mod+g mode "$mode_program"
 #Set mouse properties
 #exec xinput --set-prop 11 269 1
 #exec xinput --set-prop 11 266 -1
-exec --no-startup-id sh $HOME/.setupmouse.sh
+#exec --no-startup-id sh $HOME/.setupmouse.sh
