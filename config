@@ -152,7 +152,7 @@ workspace $w6 output HDMI1
 workspace $w7 output HDMI1
 workspace $w8 output HDMI1
 workspace $w9 output HDMI1
-workspace $w0 output HDMI1
+workspace $w0 output DP2
 
 # switch to workspace
 bindsym $mod+1 workspace $w1 
