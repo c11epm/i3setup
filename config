@@ -238,6 +238,6 @@ bindsym $mod+P mode "$mode_system"
 
 
 #At startup
-exec --no-startup-id /home/emil/.setupmouse.sh
+#exec --no-startup-id /home/emil/.setupmouse.sh
 exec --no-startup-id i3-msg 'workspace 1: Terminal; exec /usr/bin/google-chrome;'
 
