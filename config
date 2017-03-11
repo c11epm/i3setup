@@ -29,11 +29,6 @@ exec unity-settings-daemon
 #Start transparency thing
 exec xcompmgr -c -f -n
 
-#Set background image
-exec feh --bg-fill /home/emil/Pictures/bark_wagon.png
-
-exec xset m 0/1 4
-
 #Keypress events
 #Toggle mute F1
 bindcode 121 exec amixer -D pulse set Master 1+ toggle
@@ -63,7 +58,7 @@ bindsym $mod+m exec gnome-system-monitor
 bindsym $mod+n exec nautilus 
 
 #Google Chrome
-bindsym $mod+g exec chromium-browser 
+bindsym $mod+g exec google-chrome 
 #Firefox fast open (browser)
 bindsym $mod+b exec firefox
 
@@ -136,11 +131,11 @@ workspace $w2 output DVI-D-0
 workspace $w3 output DVI-D-0
 workspace $w4 output DVI-D-0
 workspace $w5 output DVI-D-0
-workspace $w6 output DVI-I-0
-workspace $w7 output DVI-I-0
-workspace $w8 output DVI-I-0
-workspace $w9 output DVI-I-0
-workspace $w0 output DVI-I-0
+workspace $w6 output DP-0 
+workspace $w7 output DP-0
+workspace $w8 output DP-0
+workspace $w9 output DP-0
+workspace $w0 output DP-0
 
 # switch to workspace
 bindsym $mod+1 workspace $w1 
@@ -238,6 +233,8 @@ bindsym $mod+P mode "$mode_system"
 
 
 #At startup
-#exec --no-startup-id /home/emil/.setupmouse.sh
-exec --no-startup-id i3-msg 'workspace 1: Terminal; exec /usr/bin/chromium-browser;'
+exec --no-startup-id /home/emil/.setup.sh >> /home/emil/log.txt
+
+exec --no-startup-id i3-msg 'workspace 1: Terminal; exec /usr/bin/google-chrome;'
+
 
