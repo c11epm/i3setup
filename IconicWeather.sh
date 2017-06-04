@@ -14,6 +14,8 @@ if (/Currently/) {
     chomp;
     /\<title\>Currently: (.*)?\<\/title\>/;
     my @values = split(":", $1);
+    #print "$values[0] $values[1]";
+
     if ($values[0] eq "Sunny" || $values[0] eq "Hazy Sunshine" || $values[0] eq "Hazy Sunshine" || $values[0] eq "Hot") {
         my $sun = "\x{f00d}";
         binmode(STDOUT, ":utf8");
@@ -68,7 +70,11 @@ if (/Currently/) {
         binmode(STDOUT, ":utf8");
         print "$snow";
     }
-
+    if ($values[0] eq "Clear" || $values[0] eq "Mostly Clear" || $values[0] eq "Hazy Moonlight") {
+        my $night = "\x{f02e}";
+        binmode(STDOUT, ":utf8");
+        print "$night";
+    }
     print"$values[1]";
 }'
 

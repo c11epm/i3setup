@@ -220,7 +220,7 @@ bindsym $mod+r mode "resize"
 
 #New bar using i3blocks instead of i3status
 bar {
-  font pango:Source Sans Pro-10 10, WeatherIcons 10
+  font pango:Source Sans Pro-10 10, FontAwesome 10, WeatherIcons 10
   status_command i3blocks -c ~/.i3/i3blocks.conf
   position top
   colors {
