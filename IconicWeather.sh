@@ -40,19 +40,19 @@ if (/Currently/) {
         print "$cloud";
     }
 
-    if ($values[0] eq "Mostly Cloudy w/ Showers" || $values[0] eq "Partly Sunny w/ Showers") {
+    if ($values[0] eq "Mostly Cloudy W/ Showers" || $values[0] eq "Partly Sunny W/ Showers") {
         my $cloudshowers = "\x{f004}";
         binmode(STDOUT, ":utf8");
         print "$cloudshowers";
     }
 
-    if ($values[0] eq "Mostly Cloudy w/ T-Storms" || $values[0] eq "Partly Sunny w/ T-Storms") {
+    if ($values[0] eq "Mostly Cloudy W/ T-Storms" || $values[0] eq "Partly Sunny W/ T-Storms" || $values[0] eq "T-Storms" ) {
         my $thunder = "\x{f005}";
         binmode(STDOUT, ":utf8");
         print "$thunder";
     }
 
-    if ($values[0] eq "Showers" ||  $values[0] eq "T-Storms"  || $values[0] eq "Rain")
+    if ($values[0] eq "Showers" || $values[0] eq "Rain")
     {
         my $rain = "\x{f019}";
         binmode(STDOUT, ":utf8");
@@ -64,7 +64,7 @@ if (/Currently/) {
         binmode(STDOUT, ":utf8");
         print "$wind";
     }
-    if ($values[0] eq "Flurries" || $values[0] eq "Mostly Cloudy w/ Flurries" || $values[0] eq "Partly Sunny w/ Flurries" || $values[0] eq "Snow" || $values[0] eq "Mostly Cloudy w/ Snow" || $values[0] eq "Ice" || $values[0] eq "Sleet" || $values[0] eq "Freezing Rain" || $values[0] eq "Rain and Snow" || $values[0] eq "Cold")
+    if ($values[0] eq "Flurries" || $values[0] eq "Mostly Cloudy W/ Flurries" || $values[0] eq "Partly Sunny W/ Flurries" || $values[0] eq "Snow" || $values[0] eq "Mostly Cloudy W/ Snow" || $values[0] eq "Ice" || $values[0] eq "Sleet" || $values[0] eq "Freezing Rain" || $values[0] eq "Rain and Snow" || $values[0] eq "Cold")
     {
         my $snow = "\x{f064}";
         binmode(STDOUT, ":utf8");
